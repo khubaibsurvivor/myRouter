@@ -1,38 +1,31 @@
-import { useState } from 'react'
-import { createBrowserRouter } from 'react-router-dom'
-import heroImg from './assets/hero.png'
-import {link} from 'react-router-dom'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import './App.css'
+import { createBrowserRouter, Outlet, RouterProvider } from 'react-router-dom'
+import { Navbar } from './Component/Navbar.jsx'
 import Home from './Pages/Home.jsx'
 import About from './Pages/About.jsx'
 import Auther from './Pages/Auther.jsx'
 
+function Layout() {
+  return (
+    <>
+      <Navbar />
+      <Outlet />
+    </>
+  )
+}
 
 const router = createBrowserRouter([
-    {
-      path: "/",
-      element: <Home />,
-    },{
-      path : "/about",
-      element: <About/>
-    }
-  ])
+  {
+    element: <Layout />,
+    children: [
+      { path: '/', element: <Home /> },
+      { path: '/about', element: <About /> },
+      { path: '/auther', element: <Auther /> },
+    ],
+  },
+])
 
 function App() {
-  const [count, setCount] = useState(0)
-
-  return (<>
-  
-  
-  
-  <Home />
-
-  
-  
-  </>
-  )
+  return <RouterProvider router={router} />
 }
 
 export default App
