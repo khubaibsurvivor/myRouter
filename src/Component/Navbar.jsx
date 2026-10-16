@@ -12,7 +12,7 @@ export const Navbar = () => {
     <div class="flex items-center">
         <Link class="text-sm px-4 py-2 leading-none rounded-full hover:bg-gray-700" to="/">Home</Link>
         <Link class="text-sm px-4 py-2 leading-none rounded-full hover:bg-gray-700" to="/about">About</Link>
-        <Link class="text-sm px-4 py-2 leading-none rounded-full hover:bg-gray-700" to="/Author"><Author></Author></Link>
+        <Link class="text-sm px-4 py-2 leading-none rounded-full hover:bg-gray-700" to="/author">Author</Link>
     </div>
 </nav>
 
